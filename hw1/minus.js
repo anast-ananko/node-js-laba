@@ -29,6 +29,10 @@ String.prototype.minus = function (other) {
   return result.reverse().join("");
 };
 
+export {};
+
+console.log('------Subtraction-----');
 console.log("99".minus("33"));
 console.log("100".minus("1"));
 console.log("20".minus("5"));
+console.log('----------------------')

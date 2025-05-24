@@ -21,6 +21,9 @@ String.prototype.plus = function (other) {
   return result.reverse().join("");
 };
 
+console.log('-------Addition-------');
 console.log("33".plus("66"));
 console.log("1".plus("999"));
 console.log("100".plus("5"));
+console.log('----------------------');
+
