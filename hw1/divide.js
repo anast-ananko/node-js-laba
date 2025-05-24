@@ -37,4 +37,5 @@ console.log("-------Division-------");
 console.log("99".divide("3"));
 console.log("100".divide("10"));
 console.log("1024".divide("4"));
+console.log("2".divide("0"));
 console.log("----------------------");
