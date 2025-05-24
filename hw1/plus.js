@@ -9,8 +9,8 @@ String.prototype.plus = function (other) {
   while (b.length < a.length) b = "0" + b;
 
   for (let i = a.length - 1; i >= 0; i--) {
-    let digitA = parseInt(a[i] || "0", 10);
-    let digitB = parseInt(b[i] || "0", 10);
+    let digitA = parseInt(a[i], 10);
+    let digitB = parseInt(b[i], 10);
     let sum = digitA + digitB + carry;
     carry = Math.floor(sum / 10);
     result.push(sum % 10);
