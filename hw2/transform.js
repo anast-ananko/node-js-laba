@@ -46,7 +46,7 @@ const DataTransform = {
       case "number":
         return DataTransform.convertToNumber(value);
       case "boolean":
-        return Boolean(value);
+        return DataTransform.isTruthy(value).result;
       case "object":
         if (typeof value === "object") return value;
         try {
