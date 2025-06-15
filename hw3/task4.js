@@ -20,7 +20,7 @@ function power(base, exponent) {
 }
 
 const power1 = power(8, 0);
-const power2 =  power(2, 4);
+const power2 = power(2, 4);
 const power3 = power(3, 3);
 console.log(power1);
 console.log(power2);
