@@ -1,4 +1,15 @@
 function getFullName(person) {
+  if (
+    typeof person !== "object" ||
+    person === null ||
+    typeof person.firstName !== "string" ||
+    typeof person.lastName !== "string"
+  ) {
+    throw new TypeError(
+      "person must be an object with string properties 'firstName' and 'lastName'."
+    );
+  }
+
   return `${person.firstName} ${person.lastName}`;
 }
 
@@ -8,8 +19,12 @@ const fullName = getFullName(person);
 console.log(fullName);
 
 function filterUniqueWords(text) {
+  if (typeof text !== "string") {
+    throw new TypeError("text must be a string.");
+  }
+
   const compose = (f, g) => (x) => f(g(x));
-  
+
   const normalizeText = (str) => str.toLowerCase().split(" ");
   const uniqueSorted = (arr) => Array.from(new Set(arr)).sort();
 
@@ -22,6 +37,10 @@ const uniqueWords = filterUniqueWords(text);
 console.log(uniqueWords);
 
 function getAverageGrade(students) {
+  if (!Array.isArray(students)) {
+    throw new TypeError("students must be an array.");
+  }
+
   const sum = (arr) => arr.reduce((a, b) => a + b, 0);
 
   const getGrades = (student) => student.grades;

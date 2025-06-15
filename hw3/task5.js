@@ -1,4 +1,12 @@
 function lazyMap(array, fn) {
+  if (!Array.isArray(array)) {
+    throw new TypeError("First argument must be an array.");
+  }
+
+  if (typeof fn !== "function") {
+    throw new TypeError("Second argument must be a function.");
+  }
+
   let index = 0;
 
   return {

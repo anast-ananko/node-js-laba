@@ -12,6 +12,18 @@ console.log(factorial5);
 console.log(factorial10);
 
 function power(base, exponent) {
+  if (typeof base !== "number" || typeof exponent !== "number") {
+    throw new TypeError("Both base and exponent must be numbers.");
+  }
+
+  if (!Number.isInteger(exponent)) {
+    throw new TypeError("Exponent must be an integer.");
+  }
+
+  if (exponent < 0) {
+    throw new RangeError("Exponent must be a non-negative integer.");
+  }
+
   if (exponent === 0) {
     return 1;
   }

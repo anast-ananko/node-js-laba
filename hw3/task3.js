@@ -18,6 +18,20 @@ console.log(counter1());
 console.log(counter2());
 
 function repeatFunction(fn, num) {
+  if (typeof fn !== "function") {
+    throw new TypeError("First argument must be a function.");
+  }
+
+  if (typeof num !== "number" || !Number.isFinite(num)) {
+    throw new TypeError("Second argument must be a finite number.");
+  }
+
+  if (!Number.isInteger(num) || num < 0) {
+    throw new RangeError(
+      "Number of repetitions must be a non-negative integer."
+    );
+  }
+
   return function (...args) {
     if (num > 0) {
       for (let i = 0; i < num; i++) {

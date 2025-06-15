@@ -1,4 +1,12 @@
 function calculateDiscountedPrice(array, discount) {
+  if (!Array.isArray(array)) {
+    throw new TypeError("The first argument must be an array.");
+  }
+
+  if (typeof discount !== "number" || discount < 0 || discount > 100) {
+    throw new RangeError("Discount must be a number between 0 and 100.");
+  }
+
   return array.map((item) => {
     return {
       ...item,
@@ -8,6 +16,10 @@ function calculateDiscountedPrice(array, discount) {
 }
 
 function calculateTotalPrice(array) {
+  if (!Array.isArray(array)) {
+    throw new TypeError("The argument must be an array.");
+  }
+
   return array.reduce((acc, item) => acc + item.price, 0);
 }
 
