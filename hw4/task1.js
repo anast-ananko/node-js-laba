@@ -1,4 +1,4 @@
-class Person {
+export class Person {
   constructor({ firstName, lastName, age, email }) {
     Object.defineProperties(this, {
       firstName: {
@@ -63,11 +63,20 @@ console.log(person.firstName);
 console.log(updated.firstName);
 console.log(person.age);
 console.log(updated.age);
-person.lastName = "Smith";
+try {
+  person.lastName = "Smith";
+} catch (e) {
+  console.error(e.message);
+}
 console.log(person.lastName);
-updated.age = 99;
+try {
+  updated.age = 99;
+} catch (e) {
+  console.error(e.message);
+}
 console.log(updated.age);
 
+console.log('----- Address -----')
 person.address.city = "London";
 console.log(person.address.city);
 console.log(Object.keys(person));
