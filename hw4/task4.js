@@ -30,7 +30,7 @@ const person = new Person({
   email: "john.doe@example.com",
 });
 
-console.log('----- Check immutability of the Address object -----')
+console.log('----- Check the immutability of Address object -----')
 person.address.city = "Minsk";
 console.log(person.address.city);
 person.address.city = "Grodno";

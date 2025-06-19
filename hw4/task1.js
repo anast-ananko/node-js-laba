@@ -63,22 +63,24 @@ console.log(person.firstName);
 console.log(updated.firstName);
 console.log(person.age);
 console.log(updated.age);
+// With try catch block because there is a mistake in attempt to modify the read-only field LastName
 try {
   person.lastName = "Smith";
 } catch (e) {
   console.error(e.message);
 }
-console.log(person.lastName);
+console.log(person.lastName); // Check if the read-only field LastName is not modified
+// With try catch block because there is a mistake in attempt to modify the read-only field Age
 try {
   updated.age = 99;
 } catch (e) {
   console.error(e.message);
 }
-console.log(updated.age);
+console.log(updated.age); // Check if the read-only field Age in the updated object is also not modified
 
 console.log('----- Address -----')
 person.address.city = "London";
 console.log(person.address.city);
-console.log(Object.keys(person));
-const luke = person.updateInfo({ firstName: "Luke" });
-console.log(luke.address.city);
+console.log(Object.keys(person)); // Check if Address property is not enumerable
+const luke = person.updateInfo({ firstName: "Luke" }); 
+console.log(luke.address.city); // Check if Address property is copied to the copied object
