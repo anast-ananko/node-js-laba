@@ -26,9 +26,9 @@ const data2 = [
 ];
 
 const uniqueById = customFilterUnique(data1, (item) => item.id);
-console.log('----- Filter by id  -----');
+console.log('----- Filter by id -----');
 console.log(uniqueById);
 
 const uniqueByName = customFilterUnique(data2, (item) => item.name);
-console.log('----- Filter by name  -----');
+console.log('----- Filter by name -----');
 console.log(uniqueByName);
