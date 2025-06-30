@@ -2,8 +2,9 @@ function measureArrayPerformance(fn, array) {
   const t0 = performance.now();
   const result = fn(array);
   const t1 = performance.now();
-  console.log(`Call to function took ${t1 - t0} milliseconds.`);
-  return result;
+  const time = t1 - t0;
+  console.log(`Call to function took ${time} milliseconds.`);
+  return { result, time };
 }
 
 const array = Array.from({ length: 100000 }, (_, i) => i);
@@ -46,14 +47,14 @@ function customReduce(arr) {
   return sum;
 }
 
-console.log('----- Map -----');
+console.log("----- Map -----");
 measureArrayPerformance(builtInMap, array);
 measureArrayPerformance(customMap, array);
 
-console.log('----- Filter -----');
+console.log("----- Filter -----");
 measureArrayPerformance(builtInFilter, array);
 measureArrayPerformance(customFilter, array);
 
-console.log('----- Reduce -----');
+console.log("----- Reduce -----");
 measureArrayPerformance(builtInReduce, array);
 measureArrayPerformance(customReduce, array);
