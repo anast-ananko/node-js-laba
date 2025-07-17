@@ -166,17 +166,13 @@ cart2.addBook(book4);
 console.log("----- Cart 1 -----");
 console.log(cart1);
 console.log(
-  `Total price for ${cart1.user.name}'s cart: $${cart1
-    .getTotalPrice()
-    .toFixed(2)}`
+  `Total price for ${cart1.user.name}'s cart: $${cart1.getTotalPrice()}`
 );
 
 console.log("----- Cart 2 -----");
 console.log(cart2);
 console.log(
-  `Total price for ${cart2.user.name}'s cart: $${cart2
-    .getTotalPrice()
-    .toFixed(2)}`
+  `Total price for ${cart2.user.name}'s cart: $${cart2.getTotalPrice()}`
 );
 
 // Orders
@@ -186,15 +182,11 @@ const order2 = new Order(user2, Array.from(cart2.items.values()));
 // Orders Summaries
 console.log("----- Order 1 -----");
 console.log(order1);
-console.log(
-  `Order total for ${order1.user.name}: $${order1.getTotalPrice().toFixed(2)}`
-);
+console.log(`Order total for ${order1.user.name}: $${order1.getTotalPrice()}`);
 
 console.log("----- Order 2 -----");
 console.log(order2);
-console.log(
-  `Order total for ${order2.user.name}: $${order2.getTotalPrice().toFixed(2)}`
-);
+console.log(`Order total for ${order2.user.name}: $${order2.getTotalPrice()}`);
 
 // ================================
 // Part 3: Demonstration
@@ -271,14 +263,10 @@ cart4.addBook(nonfiction2);
 
 // Carts Summaries
 console.log(
-  `\nTotal price for ${cart3.user.name}'s cart: $${cart3
-    .getTotalPrice()
-    .toFixed(2)}`
+  `\nTotal price for ${cart3.user.name}'s cart: $${cart3.getTotalPrice()}`
 );
 console.log(
-  `Total price for ${cart4.user.name}'s cart: $${cart4
-    .getTotalPrice()
-    .toFixed(2)}`
+  `Total price for ${cart4.user.name}'s cart: $${cart4.getTotalPrice()}`
 );
 
 // Orders
@@ -290,10 +278,10 @@ console.log(`${order3.user.name} placed an order with the following books:`);
 order3.books.forEach(({ book, quantity }) => {
   console.log(`- ${book.title} x${quantity} ($${book.price} each)`);
 });
-console.log(`Total: $${order3.getTotalPrice().toFixed(2)}`);
+console.log(`Total: $${order3.getTotalPrice()}`);
 
 console.log(`${order4.user.name} placed an order with the following books:`);
 order4.books.forEach(({ book, quantity }) => {
   console.log(`- ${book.title} x${quantity} ($${book.price} each)`);
 });
-console.log(`Total: $${order4.getTotalPrice().toFixed(2)}`);
+console.log(`Total: $${order4.getTotalPrice()}`);
